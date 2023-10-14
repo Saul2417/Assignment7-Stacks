@@ -112,114 +112,12 @@ void n_Queens::fillBoard()
 			}		
 		}
 
-		//if (filledSpaces.empty())
-		//{
-		//	filledSpaces.push(currentSpace);
-		//	filled++;
-		//	if (filled == boardSize)
-		//	{
-		//		gameWon = true;
-		//		displayBoard();
-		//		break;
-		//	}
-		//	else
-		//	{
-		//		currentSpace.setRow(currentSpace.getRow() + 1);
-		//		currentSpace.setColumn(1);
-		//	}
-		//}
-		//else
-		//{
-		//	if (checkIfConflict(boardSize, filledSpaces, currentSpace) == false)
-		//	{
-		//		filledSpaces.push(currentSpace);
-		//		filled++;
-		//		if (filled == boardSize)
-		//		{
-		//			gameWon = true;
-		//			displayBoard();
-		//			break;
-		//		}
-		//		else
-		//		{
-		//			currentSpace.setRow(currentSpace.getRow() + 1);
-		//			currentSpace.setColumn(1);
-		//		}
-		//	}
-		//	/*else if ((currentSpace.getRow() == boardSize) && (currentSpace.getColumn() == boardSize) && (filled == boardSize - 1))
-		//	{
-		//		std::cout << "No Solution Found. " << endl;
-		//		return;
-		//	}*/
-		//	else if (currentSpace.getColumn() >= boardSize)
-		//	{
-		//		currentSpace.setRow(filledSpaces.top().getRow());
-		//		currentSpace.setColumn(filledSpaces.top().getColumn() + 1);
-		//		filledSpaces.pop();
-		//		filled--;				
-		//	}
-		//	else if (currentSpace.getRow() <= boardSize)
-		//	{
-		//		currentSpace.setColumn(currentSpace.getColumn() + 1);
-		//	}		
-		//}
-		// 
-		// 
+		
 						
 	} while (gameWon == false);
 }
 
-//if (filledSpaces.empty())
-//{
-//	filledSpaces.push(currentSpace);
-//	filled++;
-//	if (filled == boardSize)
-//	{
-//		gameWon = true;
-//		displayBoard();
-//		break;
-//	}
-//	else
-//	{
-//		currentSpace.setRow(currentSpace.getRow() + 1);
-//		currentSpace.setColumn(1);
-//	}
-//}
-//else
-//{
-//	if (checkIfConflict(boardSize, filledSpaces, currentSpace) == false)
-//	{
-//		filledSpaces.push(currentSpace);
-//		filled++;
-//		if (filled == boardSize)
-//		{
-//			gameWon = true;
-//			displayBoard();
-//			break;
-//		}
-//		else
-//		{
-//			currentSpace.setRow(currentSpace.getRow() + 1);
-//			currentSpace.setColumn(1);
-//		}
-//	}
-//	/*else if ((currentSpace.getRow() == boardSize) && (currentSpace.getColumn() == boardSize) && (filled == boardSize - 1))
-//	{
-//		std::cout << "No Solution Found. " << endl;
-//		return;
-//	}*/
-//	else if (currentSpace.getColumn() >= boardSize)
-//	{
-//		currentSpace.setRow(filledSpaces.top().getRow());
-//		currentSpace.setColumn(filledSpaces.top().getColumn() + 1);
-//		filledSpaces.pop();
-//		filled--;
-//	}
-//	else if (currentSpace.getRow() <= boardSize)
-//	{
-//		currentSpace.setColumn(currentSpace.getColumn() + 1);
-//	}
-//}
+
 
 void n_Queens::displayBoard() const
 {
@@ -269,29 +167,6 @@ bool checkIfConflict(int boardSize, stack<BoardSpaces> filledSpaces, BoardSpaces
 	return false;
 }
 
-/*if (boardSize == 1)
-	{
-		return false;
-	}
-	if (abs(filledSpaces.top().getColumn() - currentSpace.getColumn()) <= 1)
-	{
-		return true;
-	}
-	else
-	{
-		while(!filledSpaces.empty())
-		{
-			if (filledSpaces.top().getColumn() == currentSpace.getColumn())
-			{
-
-				return true;
-			}
-			else
-			{
-				//filledSpaces.pop();
-			}
-		}
-	}*/
 
 void n_QueensMenu()
 {
