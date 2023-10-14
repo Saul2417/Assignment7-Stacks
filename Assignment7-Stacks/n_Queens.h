@@ -22,7 +22,7 @@ public:
 	int getBoardSize() const;
 	int getFilled() const;
 	void fillBoard();
-	void displayBoard() const; 
+	void displayBoard(stack<BoardSpaces> filledSpaces) const;
 };
 
 

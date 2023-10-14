@@ -53,7 +53,7 @@ void n_Queens::fillBoard()
 			if (filled == boardSize)
 			{
 				gameWon = true;
-				displayBoard();
+				displayBoard(filledSpaces);
 				break;
 			}
 			else
@@ -119,17 +119,56 @@ void n_Queens::fillBoard()
 
 
 
-void n_Queens::displayBoard() const
+void n_Queens::displayBoard(stack<BoardSpaces> filledSpaces) const
 {
-	cout << boardSize << "-Queens Soulution." << endl;
+	cout << endl << "\t" << boardSize << "-Queens Soulution." << endl;
+	
+	////going to get me the chessboard size and give me the box
+	//cout << "\n\t" << string(boardSize * 2 + 1, char(205)) << endl;
+	////have to loop through the chessboard (so the queensBoard)
+	//for (const vector<char>& row : chessboard) 
+	//{
+	//	cout << "\t" << char(186);
+	//	//print out the '-'
+	//	for (char i : row) 
+	//	{
+	//		cout << i << char(186);
+	//	}
+	//	cout << endl;
+	//	cout << "\t" << string(chessboard.size() * 2 + 1, char(205)) << endl;
+	//}
 
-	/*std::cout << std::string(1, char(201));
-	for (int index = 0; index < boardSize - 1; index++)
+	cout << "\n\t" << std::string(1, char(201));
+    cout <<  string(boardSize * 2 + 1, char(205));
+	cout << string(1, char(187)) << endl;
+	/*for (int index = 0; index < boardSize - 1; index++)
 	{
 		std::cout << std::string(3, char(205));
-	}
+	}*/
 
 	for (int index = 0; index < boardSize; index++)
+	{
+		cout << "\t" << string(1, char(186)) << " ";
+		for (int j = 0; j < boardSize; j++)
+		{
+			if (filledSpaces.top().getColumn() == (j + 1))
+			{
+				cout << 'Q';
+			}
+			else
+			{
+				cout << '-';
+			}
+			if (j < boardSize - 1)
+			{
+				cout << string(1, char(179));
+			}			
+		}
+		cout << " " << string(1, char(186)) << endl;
+		filledSpaces.pop();
+	}
+
+	/*for (int index = 0; index < boardSize; index++)
 	{
 		std::cout << std::string(1, char(186));
 		for (int j = 0; j < boardSize; j++)
@@ -137,8 +176,15 @@ void n_Queens::displayBoard() const
 			std::cout << " " << " " << std::string(1, char(186));
 		}
 	}*/
+	
+	cout << "\t" << std::string(1, char(200));
+	cout << string(boardSize * 2 + 1, char(205));
+	cout << string(1, char(188)) << endl;
+
 	system("pause");
 }
+
+
 
 bool checkIfConflict(int boardSize, stack<BoardSpaces> filledSpaces, BoardSpaces currentSpace)
 {
